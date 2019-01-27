@@ -84,17 +84,17 @@ const BFP_Color = (bfp,gender) => {
 const display = (bfp,bmr,bmi_m,w2h) => {
   $("#bodyFat_body").html(`<h3>${bfp.toFixed(2)}%</h3>
   <p>This is considered "${BFP_Color(bfp,$("#gender").val())[1]}"</p>`);
-  $("#bodyFat").addClass(`border-${BFP_Color(bfp,$("#gender").val())[0]}`);
+  $("#bodyFat").attr('class',`card border-${BFP_Color(bfp,$("#gender").val())[0]}`);
 
   $("#BMI_body").html(`<h3>${bmi_m.toFixed(2)}</h3>
   <p>This is considered "${BMI_Color(bmi_m)[1]}"</p>`);
-  $("#BMI").addClass(`border-${BMI_Color(bmi_m)[0]}`);
+  $("#BMI").attr('class',`card border-${BMI_Color(bmi_m)[0]}`);
 
   $("#BMR_body").html(`<h3>${bmr.toFixed(2)} cal</h3>`);
 
   $("#whRatio_body").html(`<h3>${w2h.toFixed(2)}</h3>
   <p>This is considered "${W2H_Color(w2h,$("#gender").val())[1]}"</p>`);
-  $("#whRatio").addClass(`border-${W2H_Color(w2h,$("#gender").val())[0]}`);
+  $("#whRatio").attr('class',`card border-${W2H_Color(w2h,$("#gender").val())[0]}`);
 }
 const calculate = () => {
   let gender = $("#gender").val();
